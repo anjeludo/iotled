@@ -3,7 +3,7 @@
  Example IOT: Spring Boot + Pi4j + MQTT Eclipse Paho + Raspberry Pi 3 + LED
  
  Needed software:
-    - Spring Boot 
+    - Spring Boot + Angularjs 4
     - Pi4j
     - Java 8
     - Maven
