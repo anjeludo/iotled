@@ -4,7 +4,8 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.Properties;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
@@ -12,7 +13,7 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
 public class MqttUtil {
-	private static Logger LOG = Logger.getLogger(MqttUtil.class);
+	private static Logger LOG = LoggerFactory.getLogger(MqttUtil.class);
 	private final static String PROPERTIES_FILE_NAME = "/mqtt.properties";
 	Properties props = new Properties();
 	

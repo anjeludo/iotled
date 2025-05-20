@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +21,7 @@ public class LedLightServiceImpl extends RaspiPin implements LedLightService  {
 	@Value("${iotled.pin.name}")
 	private String pinName;
 	
-	private static Logger LOG = Logger.getLogger(LedLightServiceImpl.class);
+	private static Logger LOG = LoggerFactory.getLogger(LedLightServiceImpl.class);
 	//private static final Pin PIN = RaspiPin.GPIO_29;
 	private static GpioPinDigitalOutput pin = null;
 

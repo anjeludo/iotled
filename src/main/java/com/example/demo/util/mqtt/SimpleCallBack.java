@@ -1,12 +1,13 @@
 package com.example.demo.util.mqtt;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 
 class SimpleCallback implements MqttCallback {
-	private static Logger LOG = Logger.getLogger(SimpleCallback.class);
+	private static Logger LOG = LoggerFactory.getLogger(SimpleCallback.class);
 	//Called when the client lost the connection to the broker
 	public void connectionLost(Throwable arg0) {
 		LOG.info("Connection lost to the broker tcp://loclahost:1883");
