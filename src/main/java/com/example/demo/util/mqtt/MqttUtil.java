@@ -16,14 +16,18 @@ public class MqttUtil {
 	private final static String PROPERTIES_FILE_NAME = "/mqtt.properties";
 	Properties props = new Properties();
 	
-	private static MqttUtil instance;
+	private static volatile MqttUtil instance;
     
     private MqttUtil(){
     }
     
     public static MqttUtil getInstance(){
         if(instance == null){
-            instance = new MqttUtil();
+            synchronized (MqttUtil.class) {
+                if(instance == null){
+                    instance = new MqttUtil();
+                }
+            }
         }
         return instance;
     }
